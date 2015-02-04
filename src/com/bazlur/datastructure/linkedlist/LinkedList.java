@@ -1,4 +1,4 @@
-package com.bazlur.datastructure;
+package com.bazlur.datastructure.linkedlist;
 
 /**
  * @author Bazlur Rahman Rokon

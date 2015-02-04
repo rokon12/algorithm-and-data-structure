@@ -1,12 +1,10 @@
-package com.bazlur.datastructure;
-
-import java.util.LinkedList;
+package com.bazlur.datastructure.linkedlist;
 
 /**
  * @author Bazlur Rahman Rokon
  * @date 2/4/15.
  */
-public class MainApp {
+public class Demo {
     public static void main(String[] args) {
         Node first = new Node();
         first.setValue(5);
