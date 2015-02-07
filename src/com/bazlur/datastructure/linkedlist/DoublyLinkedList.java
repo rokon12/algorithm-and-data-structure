@@ -4,7 +4,7 @@ package com.bazlur.datastructure.linkedlist;
  * @author Bazlur Rahman Rokon
  * @date 2/5/15.
  */
-public class DoubleLinkedList<Type> {
+public class DoublyLinkedList<Type> {
     private Node<Type> head;
     private Node<Type> tail;
     private long size;

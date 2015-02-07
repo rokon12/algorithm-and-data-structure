@@ -4,21 +4,21 @@ package com.bazlur.datastructure.linkedlist;
  * @author Bazlur Rahman Rokon
  * @date 2/4/15.
  */
-public class LinkedList<Type> {
+public class SinglyLinkedList<Type> {
     private long size;
 
-    private LinkedListNode<Type> head;
-    private LinkedListNode<Type> tail;
+    private Node<Type> head;
+    private Node<Type> tail;
 
     public void addFirst(Type value) {
-        addFirst(new LinkedListNode<>(value));
+        addFirst(new Node<>(value));
     }
 
     public void addLast(Type value) {
-        addLast(new LinkedListNode<>(value));
+        addLast(new Node<>(value));
     }
 
-    private void addLast(LinkedListNode<Type> node) {
+    private void addLast(Node<Type> node) {
         if (size == 0) {
             head = node;
         } else {
@@ -28,8 +28,8 @@ public class LinkedList<Type> {
         size++;
     }
 
-    public void addFirst(LinkedListNode<Type> node) {
-        LinkedListNode<Type> temp = head;
+    public void addFirst(Node<Type> node) {
+        Node<Type> temp = head;
         head = node;
         head.setNext(temp);
 
@@ -40,11 +40,11 @@ public class LinkedList<Type> {
         }
     }
 
-    public LinkedListNode<Type> getHead() {
+    public Node<Type> getHead() {
         return head;
     }
 
-    public LinkedListNode<Type> getTail() {
+    public Node<Type> getTail() {
         return tail;
     }
 
@@ -65,7 +65,7 @@ public class LinkedList<Type> {
                 head = null;
                 tail = null;
             } else {
-                LinkedListNode<Type> current = head;
+                Node<Type> current = head;
 
                 while (current.getNext() != tail) {
                     current = current.getNext();
@@ -87,8 +87,8 @@ public class LinkedList<Type> {
     //      b. node to remove is the middle or last
 
     public boolean remove(Type type) {
-        LinkedListNode<Type> prev = null;
-        LinkedListNode<Type> current = head;
+        Node<Type> prev = null;
+        Node<Type> current = head;
 
         while (current != null) {
             if (current.getValue().equals(type)) {
@@ -124,13 +124,37 @@ public class LinkedList<Type> {
 
     public void print() {
         System.out.print("Total elements : " + size + " -> ");
-        LinkedListNode node = head;
+        Node node = head;
         while (node != null) {
             System.out.print(node.getValue().toString() +" ,");
             node = node.getNext();
         }
         System.out.println();
+    }
 
 
+    private class Node<Type> {
+        private Type value;
+        private Node<Type> next;
+
+        public Node(Type value) {
+            this.value = value;
+        }
+
+        public Type getValue() {
+            return value;
+        }
+
+        public void setValue(Type value) {
+            this.value = value;
+        }
+
+        public Node<Type> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<Type> next) {
+            this.next = next;
+        }
     }
 }

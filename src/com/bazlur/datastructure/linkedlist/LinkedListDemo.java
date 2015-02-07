@@ -6,7 +6,7 @@ package com.bazlur.datastructure.linkedlist;
  */
 public class LinkedListDemo {
     public static void main(String[] args) {
-        LinkedList<Integer> integers = new LinkedList<>();
+        SinglyLinkedList<Integer> integers = new SinglyLinkedList<>();
         integers.addFirst(4);
         integers.addFirst(3);
         integers.addFirst(2);
@@ -25,7 +25,7 @@ public class LinkedListDemo {
         integers.addLast(7);
         integers.print();
 
-        LinkedList<String> stringLinkedList = new LinkedList<>();
+        SinglyLinkedList<String> stringLinkedList = new SinglyLinkedList<>();
         stringLinkedList.addFirst("abcd");
         stringLinkedList.addFirst("efgh");
         stringLinkedList.addFirst("ijkl");
