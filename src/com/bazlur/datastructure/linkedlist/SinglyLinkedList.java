@@ -78,6 +78,10 @@ public class SinglyLinkedList<Type> {
         }
     }
 
+    public Type getFirst() {
+
+        return getHead().getValue();
+    }
 
     // four scenario
     // 1. empty list-  do nothing
@@ -126,10 +130,22 @@ public class SinglyLinkedList<Type> {
         System.out.print("Total elements : " + size + " -> ");
         Node node = head;
         while (node != null) {
-            System.out.print(node.getValue().toString() +" ,");
+            System.out.print(node.getValue().toString() + " ,");
             node = node.getNext();
         }
         System.out.println();
+    }
+
+    public void clear() {
+        for (Node<Type> x = head; x != null; ) {
+            Node<Type> next = x.next;
+            x.next = null;
+            x.value = null;
+            x = next;
+        }
+
+        head = tail = null;
+        size = 0;
     }
 
 
