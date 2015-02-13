@@ -25,5 +25,25 @@ public class QueueTest {
         assertEquals(4, (int) integerQueue.dequeue());
 
         assertEquals(0, integerQueue.size());
+
+        QueueArray<Integer> integerQueueArray = new QueueArray<>(Integer.class);
+        assertEquals(0, integerQueueArray.size());
+
+        integerQueueArray.enqueue(1);
+        integerQueueArray.enqueue(2);
+        integerQueueArray.enqueue(3);
+        integerQueueArray.enqueue(4);
+
+        assertEquals(4, integerQueueArray.size());
+        assertEquals(1, (int) integerQueueArray.peek());
+        assertEquals(1, (int) integerQueueArray.dequeue());
+
+        assertEquals(3, integerQueueArray.size());
+        assertEquals(2, (int) integerQueueArray.dequeue());
+        assertEquals(3, (int) integerQueueArray.dequeue());
+        assertEquals(4, (int) integerQueueArray.dequeue());
+
+        assertEquals(0, integerQueueArray.size());
+
     }
 }
