@@ -64,9 +64,7 @@ public class QueueArray<Type> {
     }
 
     public Type dequeue() {
-        if (size == 0) {
-            throw new RuntimeException("the queue is empty ");
-        }
+        checkBoundary();
 
         Type value = items[head];
 
@@ -82,14 +80,18 @@ public class QueueArray<Type> {
     }
 
     public Type peek() {
-        if (size == 0) {
-            throw new RuntimeException("the queue is empty ");
-        }
+        checkBoundary();
 
         return items[head];
     }
 
     public int size() {
         return size;
+    }
+
+    private void checkBoundary() {
+        if (size == 0) {
+            throw new RuntimeException("the queue is empty ");
+        }
     }
 }
